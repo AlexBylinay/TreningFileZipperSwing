@@ -19,7 +19,11 @@ import by.bylinay.treningFileZipperSwing2.FileZipper.ZipDoneCallback;
 
 
 /**
- * class makes a button, button-starts the process
+ * 
+ *  class makes an interface for managing file archiving
+ *  interface will have buttons
+ * buttons exist for selecting directories and starting the process 
+ * 
  * 
  * @param input      - input file you want to archive
  * @param output     - output zipped file
@@ -39,7 +43,7 @@ public class SwingGUI extends JFrame {
 	private JProgressBar progressBar = null;
 	private JPanel contents = null;
 	private JProgressBar progressBar2 = null;
-	private String textForField = "tuta budet pakazan put' k fajlu ";
+	private String textForField = "file location ";
 	FileZipper zipper = new FileZipper();
     long fileSize = -1;
 
@@ -49,15 +53,13 @@ public class SwingGUI extends JFrame {
 	 */
 
 	public void makesButtonMakesAction() {
-		// Создаем окно
+		
 		JFrame frame = new JFrame("VerticalLayoutTest");
-		// Определяем размеры
 		frame.setSize(300, 250);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		// Создаем панель с менеджером
-		// вертикального расположения компонентов
+		// Creating a panel with a manager
 		contents = new JPanel();
-		// Добавим кнопки и текстовое поле в панель
+		// add buttons and Creating a panel with a manager
 		progressBar = new JProgressBar();
 		progressBar2 = new JProgressBar();
 		button = new JButton("ARCHIVE A FILE   ");
@@ -72,9 +74,9 @@ public class SwingGUI extends JFrame {
 		messageField = new JFormattedTextField();
 		contents.add(messageField);
 		messageField.setValue(textForField);
-		// Размещаем панель в контейнере
+		// Placing the panel in the container
 		frame.setContentPane(contents);
-		// Открываем окно
+		// open window
 		frame.setVisible(true);
 
 		btnOpenDir.addActionListener(new ActionListener() {
@@ -82,7 +84,7 @@ public class SwingGUI extends JFrame {
 
 				JFileChooser chooser = new JFileChooser();
 				chooser.setDialogTitle("Vybor   fajla      ");
-				// Определение режима - только фаил
+				// Mode detection - file only
 				chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 				int result = chooser.showOpenDialog(frame);
 				input = chooser.getSelectedFile();

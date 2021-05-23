@@ -10,12 +10,13 @@ import java.util.zip.ZipOutputStream;
 /**
  * class archives the file to the directory
  * 
- * @author Администратор
+ * @author AlexBylinay
+/
+
  *
  */
 public class FileZipper implements Runnable {
-	// void Thread(Runnable threadObj, String threadName) {
-	// }
+	
 	int bytesWritten = 0;
 
 	/**
@@ -41,10 +42,6 @@ public class FileZipper implements Runnable {
 
 	}
 
-	// static boolean doZip(String input, String output) {
-	// return false;
-
-	// }
 
 	/**
 	 * directly makes a archiving of the file
@@ -55,22 +52,21 @@ public class FileZipper implements Runnable {
 	 */
 
 	void doZip(File input, String output, BytesWrittenCallback bwCallback) {
-		// *входной
+		// input
 
 		FileInputStream in = null;
 		FileOutputStream poOut = null;
-		// выходной
+		// output
 		ZipOutputStream out = null;
 
 		try {
 			in = new FileInputStream(input);
 			poOut = new FileOutputStream(output);
 			out = new ZipOutputStream(poOut);
-			// (new FileOutputStream(output));
-			// файл внутри zip-файла
+		
 			out.putNextEntry(new ZipEntry("zippedjava.docx"));
 
-			// размер
+			// size 
 			byte[] b = new byte[1024];
 			
 

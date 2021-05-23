@@ -2,9 +2,9 @@ package by.bylinay.treningFileZipperSwing2;
 
 
 /**
- * class starts the archiving process using the button
+ * class starts the archiving process with using the interface
  * 
- * @author Администратор
+ * @author AlexBylinay
  *
  */
 
